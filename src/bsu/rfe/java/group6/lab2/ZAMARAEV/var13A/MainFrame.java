@@ -53,4 +53,43 @@ public class MainFrame extends JFrame {
         radioButtons.add(button);
         hboxFormulaType.add(button);
     }
+    public MainFrame() {
+        super("Вычисление формулы");
+        setSize(WIDTH, HEIGHT);
+        Toolkit kit = Toolkit.getDefaultToolkit();
+// Отцентрировать окно приложения на экране
+        setLocation((kit.getScreenSize().width - WIDTH) / 2,
+                (kit.getScreenSize().height - HEIGHT) / 2);
+        hboxFormulaType.add(Box.createHorizontalGlue());
+        addRadioButton("Формула 1", 1);
+        addRadioButton("Формула 2", 2);
+        radioButtons.setSelected(radioButtons.getElements().nextElement().getModel(), true);
+        hboxFormulaType.add(Box.createHorizontalGlue());
+        hboxFormulaType.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
+// Создать область с полями ввода для X и Y и Z
+        JLabel labelForX = new JLabel("X:");
+        textFieldX = new JTextField("0", 5);
+        textFieldX.setMaximumSize(textFieldX.getPreferredSize());
+        JLabel labelForY = new JLabel("Y:");
+        textFieldY = new JTextField("0", 5);
+        textFieldY.setMaximumSize(textFieldY.getPreferredSize());
+        JLabel labelForZ = new JLabel("Z:");
+        textFieldZ = new JTextField("0", 5);
+        textFieldZ.setMaximumSize((textFieldZ.getPreferredSize()));
+        Box hboxVariables = Box.createHorizontalBox();
+        hboxVariables.setBorder(BorderFactory.createLineBorder(Color.RED));
+        hboxVariables.add(Box.createHorizontalGlue());
+        hboxVariables.add(labelForX);
+        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(textFieldX);
+        hboxVariables.add(Box.createHorizontalStrut(50));
+        hboxVariables.add(labelForY);
+        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(textFieldY);
+        hboxVariables.add(Box.createHorizontalStrut(50));
+        hboxVariables.add(labelForZ);
+        hboxVariables.add(Box.createHorizontalStrut(10));
+        hboxVariables.add(textFieldZ);
+        hboxVariables.add(Box.createHorizontalGlue());
+    }
 }
