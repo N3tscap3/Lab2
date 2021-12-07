@@ -91,5 +91,23 @@ public class MainFrame extends JFrame {
         hboxVariables.add(Box.createHorizontalStrut(10));
         hboxVariables.add(textFieldZ);
         hboxVariables.add(Box.createHorizontalGlue());
+        // Создать область для вывода результата
+        JLabel labelForResult = new JLabel("Результат:");
+        textFieldResult = new JTextField("0", 10);
+        textFieldResult.setMaximumSize(textFieldResult.getPreferredSize());
+        JLabel labelForM = new JLabel("Sum:");
+        textFieldM = new JTextField("0", 10);
+        textFieldM.setMaximumSize(textFieldM.getPreferredSize());
+        Box hboxResult = Box.createHorizontalBox();
+        hboxResult.add(Box.createHorizontalGlue());
+        hboxResult.add(labelForResult);
+        hboxResult.add(Box.createHorizontalStrut(10));
+        hboxResult.add(textFieldResult);
+        hboxResult.add(Box.createHorizontalStrut(20));
+        hboxResult.add(labelForM);
+        hboxResult.add(Box.createHorizontalStrut(10));
+        hboxResult.add(textFieldM);
+        hboxResult.add(Box.createHorizontalGlue());
+        hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
     }
 }
