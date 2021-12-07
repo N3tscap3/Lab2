@@ -42,4 +42,15 @@ public class MainFrame extends JFrame {
     public Double calculate2(Double x, Double y, Double z) {
         return (pow(1+pow(x,2),1/y))/(pow(E,sin(z)+x));
     }
+    // Вспомогательный метод для добавления кнопок на панель
+    private void addRadioButton(String buttonName, final int formulaId) {
+        JRadioButton button = new JRadioButton(buttonName);
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                MainFrame.this.formulaId = formulaId;
+            }
+        });
+        radioButtons.add(button);
+        hboxFormulaType.add(button);
+    }
 }
