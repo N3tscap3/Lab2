@@ -168,7 +168,16 @@ public class MainFrame extends JFrame {
         MboxButtons.add(buttonMC);
         MboxButtons.add(Box.createHorizontalGlue());
         MboxButtons.setBorder(BorderFactory.createLineBorder(Color.magenta));
-
+// Связать области воедино в компоновке BoxLayout
+        Box contentBox = Box.createVerticalBox();
+        contentBox.add(Box.createVerticalGlue());
+        contentBox.add(hboxFormulaType);
+        contentBox.add(hboxVariables);
+        contentBox.add(hboxResult);
+        contentBox.add(hboxButtons);
+        contentBox.add(MboxButtons);
+        contentBox.add(Box.createVerticalGlue());
+        getContentPane().add(contentBox, BorderLayout.CENTER);
 
     }
 }
