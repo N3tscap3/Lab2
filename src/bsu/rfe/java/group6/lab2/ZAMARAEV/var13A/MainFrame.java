@@ -138,6 +138,37 @@ public class MainFrame extends JFrame {
                 textFieldResult.setText("0");
             }
         });
+        JButton buttonM = new JButton("M+");
+        buttonM.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                Sum += result;
+                textFieldM.setText(Sum.toString());
+            }
+        });
+        JButton buttonMC = new JButton("MC");
+        buttonMC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Sum = 0.;
+                textFieldM.setText("0");
+            }
+        });
+        Box hboxButtons = Box.createHorizontalBox();
+        hboxButtons.add(Box.createHorizontalGlue());
+        hboxButtons.add(buttonCalc);
+        hboxButtons.add(Box.createHorizontalStrut(30));
+        hboxButtons.add(buttonReset);
+        hboxButtons.add(Box.createHorizontalGlue());
+        hboxButtons.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+
+        Box MboxButtons = Box.createHorizontalBox();
+        MboxButtons.add(Box.createHorizontalGlue());
+        MboxButtons.add(buttonM);
+        MboxButtons.add(Box.createHorizontalStrut(100));
+        MboxButtons.add(buttonMC);
+        MboxButtons.add(Box.createHorizontalGlue());
+        MboxButtons.setBorder(BorderFactory.createLineBorder(Color.magenta));
+
 
     }
 }
